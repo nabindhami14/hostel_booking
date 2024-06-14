@@ -8,9 +8,11 @@ const Home = () => {
     <div>
       <Hero />
 
-      {hostels.map((hostel) => (
-        <HostelCard key={hostel.id} {...hostel} />
-      ))}
+      <section className="grid sm:grid-cols-4 gap-4">
+        {hostels.map((hostel) => (
+          <HostelCard key={hostel.id} {...hostel} />
+        ))}
+      </section>
     </div>
   );
 };

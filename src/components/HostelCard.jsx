@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const HostelCard = ({ image, name, features, price }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
@@ -14,9 +16,11 @@ const HostelCard = ({ image, name, features, price }) => {
       </div>
       <div className="px-6 py-4">
         <span className="text-gray-700 text-base">{`$${price} / night`}</span>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
-          Book Now
-        </button>
+        <Link to="/bookings">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+            Book Now
+          </button>
+        </Link>
       </div>
     </div>
   );
