@@ -13,7 +13,7 @@ import Login from "./pages/auth/Login";
 
 function App() {
   return (
-    <main className="flex flex-col min-h-screen container mx-auto">
+    <main>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
