@@ -2,8 +2,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-import ErrorMessage from "../../components/common/error";
+import { Input, Button } from "@headlessui/react";
 import { Link } from "react-router-dom";
+
+import ErrorMessage from "../../components/common/error";
+import { toast } from "react-toastify";
 
 const schema = yup
   .object({
@@ -16,6 +19,11 @@ const schema = yup
   .required();
 
 const LoginPage = () => {
+  const notify = () =>
+    toast.error("LOGGED IN", {
+      position: "bottom-right",
+    });
+
   const {
     register,
     handleSubmit,
@@ -24,7 +32,10 @@ const LoginPage = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data) => console.log(data);
+  const onSubmit = async (data) => {
+    console.log(data);
+    notify();
+  };
 
   return (
     <div>
@@ -34,7 +45,7 @@ const LoginPage = () => {
       >
         <div className="space-y-2 w-full">
           <label htmlFor="email">Email</label>
-          <input
+          <Input
             type="email"
             id="email"
             {...register("email", { required: true, maxLength: 20 })}
@@ -44,7 +55,7 @@ const LoginPage = () => {
         </div>
         <div className="space-y-2 w-full">
           <label htmlFor="password">Password</label>
-          <input
+          <Input
             type="password"
             id="password"
             {...register("password", { required: true })}
@@ -52,12 +63,12 @@ const LoginPage = () => {
           />
           <ErrorMessage message={errors.password?.message} />
         </div>
-        <button
+        <Button
           type="submit"
           className="p-2 w-full bg-purple-500 rounded-md hover:bg-purple-600 transition-colors text-white"
         >
           Continue
-        </button>
+        </Button>
       </form>
 
       <div className="w-full flex flex-col items-end">

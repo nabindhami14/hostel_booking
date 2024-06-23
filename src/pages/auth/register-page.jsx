@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
 
+import { Input, Button } from "@headlessui/react";
+
 import ErrorMessage from "../../components/common/error";
 
 const schema = yup
@@ -35,7 +37,7 @@ const RegisterPage = () => {
       >
         <div className="space-y-2 w-full">
           <label htmlFor="name">Name</label>
-          <input
+          <Input
             type="name"
             id="name"
             {...register("name", { required: true, maxLength: 20 })}
@@ -45,7 +47,7 @@ const RegisterPage = () => {
         </div>
         <div className="space-y-2 w-full">
           <label htmlFor="email">Email</label>
-          <input
+          <Input
             type="email"
             id="email"
             {...register("email", { required: true, maxLength: 20 })}
@@ -55,7 +57,7 @@ const RegisterPage = () => {
         </div>
         <div className="space-y-2 w-full">
           <label htmlFor="password">Password</label>
-          <input
+          <Input
             type="password"
             id="password"
             {...register("password", { required: true })}
@@ -63,12 +65,12 @@ const RegisterPage = () => {
           />
           <ErrorMessage message={errors.password?.message} />
         </div>
-        <button
+        <Button
           type="submit"
           className="p-2 w-full bg-purple-500 rounded-md hover:bg-purple-600 transition-colors text-white"
         >
           Continue
-        </button>
+        </Button>
       </form>
 
       <div className="w-full flex justify-end">
