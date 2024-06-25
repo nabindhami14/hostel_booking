@@ -1,5 +1,11 @@
+import Map from "../../components/common/map";
+
 const Bookings = () => {
-  return <div>Bookings</div>;
+  return (
+    <div>
+      <Map />
+    </div>
+  );
 };
 
 export default Bookings;
