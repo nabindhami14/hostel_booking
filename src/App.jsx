@@ -10,6 +10,7 @@ import MainLayout from "./layouts/main-layout";
 
 import RegisterPage from "./pages/auth/register-page";
 import LoginPage from "./pages/auth/login-page";
+import NewHostel from "./pages/admin/new-hostel";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
           <Route path="/hostels">
             <Route path="" element={<Hostels />} />
             <Route path=":hostel" element={<Hostel />} />
+          </Route>
+          <Route path="/admin">
+            <Route path="new-hostel" element={<NewHostel />} />
           </Route>
         </Route>
       </Routes>
