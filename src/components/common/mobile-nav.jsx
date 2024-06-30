@@ -18,7 +18,7 @@ export default function MobileNav() {
       <MenuItems
         transition
         anchor="bottom end"
-        className="w-52 bg-gray-600 origin-top-right rounded-md border border-white/5 bg-white/5 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+        className="w-52 bg-neutral-600 origin-top-right rounded-md border border-white/5 bg-white/5 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
       >
         <MenuItem>
           <Link
