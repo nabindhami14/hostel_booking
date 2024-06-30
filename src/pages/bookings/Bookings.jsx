@@ -1,9 +1,9 @@
-import Map from "../../components/common/map";
+import BookingsTable from "../../components/table/bookings-table";
 
 const Bookings = () => {
   return (
     <div>
-      <Map />
+      <BookingsTable />
     </div>
   );
 };
