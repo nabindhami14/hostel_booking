@@ -1,6 +1,7 @@
 import { Feather, MapPin } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import Map from "../../components/map";
 
 const hostel = {
   id: 1,
@@ -51,7 +52,7 @@ const Hostel = () => {
         </div>
 
         {/* DESCRIPTION */}
-        <div className="">
+        <div className="w-11/12 mx-auto">
           <h2 className="underline">{hostel.name}</h2>
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4" /> <span>{hostel.location}</span>
@@ -75,6 +76,9 @@ const Hostel = () => {
             </ul>
           </div>
         </div>
+
+        {/* MAP */}
+        <Map />
       </div>
     </div>
   );
