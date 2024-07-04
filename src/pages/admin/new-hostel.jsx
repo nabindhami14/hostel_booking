@@ -3,6 +3,7 @@ import { Upload } from "lucide-react";
 import { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import CreatableSelect from "react-select/creatable";
+import LocationMap from "../../components/maps/LocationMap";
 
 const options = [
   { value: "internet", label: "internet" },
@@ -112,6 +113,8 @@ const NewHostel = () => {
       >
         Add Hostel
       </button>
+
+      <LocationMap />
     </form>
   );
 };
