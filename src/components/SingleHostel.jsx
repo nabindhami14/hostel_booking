@@ -1,16 +1,11 @@
+/* eslint-disable react/prop-types */
+
 import { Coins, Feather, MapPin } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { useParams } from "react-router-dom";
 
-import { hostels } from "../../data";
-import HostelMap from "../../components/maps/HostelMap";
-
-const Hostel = () => {
-  const { hostelId } = useParams();
+const SingleHostel = ({ hostel }) => {
   const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay({})]);
-
-  const hostel = hostels.find((f) => f.id === parseInt(hostelId));
 
   return (
     <div className="container mx-auto">
@@ -32,7 +27,7 @@ const Hostel = () => {
         </div>
 
         {/* DESCRIPTION */}
-        <div>
+        <div className="container mx-auto">
           <h2 className="underline">{hostel.name}</h2>
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4" /> <span>{hostel.location}</span>
@@ -60,11 +55,9 @@ const Hostel = () => {
             </ul>
           </div>
         </div>
-
-        <HostelMap hostel={hostel} />
       </div>
     </div>
   );
 };
 
-export default Hostel;
+export default SingleHostel;

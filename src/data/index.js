@@ -1,127 +1,248 @@
 export const hostels = [
   {
     id: 1,
-    name: "Cozy Backpacker's Hostel",
-    image:
-      "https://r-xx.bstatic.com/xdata/images/xphoto/263x210/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o=",
+    name: "MOHAN SOLUTIONS",
+    location: "Balkumari, Lalitpur",
+    description:
+      "Mohan Solutions offers modern accommodations with a focus on comfort and convenience. Located in Lalitpur, it provides easy access to local amenities and features a peaceful environment.",
+    rent: 15000, // Monthly fee in Nepali currency
+    images: [
+      {
+        uri: "https://images.pexels.com/photos/2387819/pexels-photo-2387819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/2956376/pexels-photo-2956376.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/1379627/pexels-photo-1379627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+    ],
+    coordinates: [27.7172, 85.324],
     features: [
       "Free Wi-Fi",
-      "Breakfast Included",
-      "Dormitory Beds",
-      "Lounge Area",
+      "24/7 Security",
+      "Laundry Services",
+      "Shared Kitchen Facilities",
+      "Daily Housekeeping",
     ],
-    price: 20,
   },
   {
     id: 2,
-    name: "City Explorer Hostel",
-    image:
-      "https://q-xx.bstatic.com/xdata/images/hotel/263x210/119467716.jpeg?k=f3c2c6271ab71513e044e48dfde378fcd6bb80cb893e39b9b78b33a60c0131c9&o=",
-    features: [
-      "24-hour Reception",
-      "Laundry Facilities",
-      "Private Rooms",
-      "Roof Terrace",
+    name: "BIRAJ HYDROPOWER",
+    location: "Kalanki, Kathmandu",
+    description:
+      "Located in Kathmandu's bustling Kalanki area, Biraj Hydropower offers comfortable accommodations with modern amenities. It is ideal for students looking for convenience and a vibrant atmosphere.",
+    rent: 18000, // Monthly fee in Nepali currency
+    images: [
+      {
+        uri: "https://images.pexels.com/photos/3064079/pexels-photo-3064079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/1292115/pexels-photo-1292115.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      },
+      {
+        uri: "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
     ],
-    price: 30,
+    coordinates: [27.7174, 85.35],
+    features: ["WIFI", "ACCOMODATION", "PARKING"],
   },
   {
     id: 3,
-    name: "Urban Oasis Hostel",
-    image:
-      "https://q-xx.bstatic.com/xdata/images/xphoto/263x210/45450084.jpeg?k=f8c2954e867a1dd4b479909c49528531dcfb676d8fbc0d60f51d7b51bb32d1d9&o=",
-    features: [
-      "Free Breakfast",
-      "Common Kitchen",
-      "Outdoor BBQ Area",
-      "Bicycle Rental",
+    name: "AAYUSH SUPPLIERS",
+    location: "Kalanki, Kathmandu",
+    description:
+      "Aayush Suppliers offers affordable accommodations in Kathmandu's Kalanki area. It provides a comfortable stay with essential amenities, making it a suitable choice for students.",
+    rent: 16000, // Monthly fee in Nepali currency
+    images: [
+      {
+        uri: "https://images.pexels.com/photos/1000653/pexels-photo-1000653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
     ],
-    price: 25,
+    coordinates: [27.7177, 85.329],
+    features: [
+      "Free Wi-Fi",
+      "24/7 Security",
+      "Laundry Services",
+      "Shared Kitchen Facilities",
+      "Daily Housekeeping",
+    ],
   },
   {
     id: 4,
-    name: "Sunset View Hostel",
-    image:
-      "https://q-xx.bstatic.com/xdata/images/hotel/263x210/100235855.jpeg?k=5b6e6cff16cfd290e953768d63ee15f633b56348238a705c45759aa3a81ba82b&o=",
-    features: [
-      "Ocean View Rooms",
-      "Surfboard Rental",
-      "Cafeteria",
-      "Yoga Classes",
+    name: "RAMAN SUPPLIERS",
+    location: "Surkhet",
+    description:
+      "Raman Suppliers offers a tranquil stay in Surkhet, ideal for students seeking a peaceful environment. It provides basic amenities and easy access to local attractions.",
+    rent: 14000, // Monthly fee in Nepali currency
+    images: [
+      {
+        uri: "https://images.pexels.com/photos/46253/mt-fuji-sea-of-clouds-sunrise-46253.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/2478248/pexels-photo-2478248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
     ],
-    price: 35,
+    coordinates: [27.72177, 85.33],
+    features: ["WIFI", "ACCOMODATION", "PARKING"],
   },
   {
     id: 5,
-    name: "Traveller’s Haven Hostel",
-    image:
-      "https://cf.bstatic.com/xdata/images/city/600x600/664666.jpg?k=e7f2be1324d4595363ec6d46d988eb21cee118a5530ce0a19a18cf85c4473d2e&o=",
-    features: ["Free Breakfast", "Library", "Rooftop Bar", "Guided Tours"],
-    price: 28,
+    name: "HIMALAYAN HAVEN",
+    location: "Nagarkot, Bhaktapur",
+    description:
+      "Nestled in the hills of Nagarkot, Himalayan Haven offers students a peaceful retreat with panoramic views of the Himalayas. It features cozy accommodations, free Wi-Fi, and a tranquil atmosphere.",
+    rent: 20000, // Monthly fee in Nepali currency
+    images: [
+      {
+        uri: "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/276505/pexels-photo-276505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/276486/pexels-photo-276486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+    ],
+    coordinates: [27.7141, 85.5568],
+    features: [
+      "Mountain Views",
+      "Free Wi-Fi",
+      "Tranquil Atmosphere",
+      "Cozy Accommodations",
+    ],
   },
   {
     id: 6,
-    name: "Green Paradise Hostel",
-    image:
-      "https://cf.bstatic.com/xdata/images/city/600x600/977220.jpg?k=ee4b7b42c35b8cbf09c8ddb7630092b40cd706fec153c41904ed6e252a883938&o=",
-    features: [
-      "Garden Area",
-      "Bonfire Nights",
-      "Free Yoga Sessions",
-      "Hammock Lounge",
+    name: "EAGLE'S NEST",
+    location: "Bandipur, Tanahun",
+    description:
+      "Perched on a hilltop in Bandipur, Eagle's Nest provides students with breathtaking views of the valley below. It offers comfortable rooms, free Wi-Fi, and a rooftop terrace for relaxation.",
+    rent: 18000, // Monthly fee in Nepali currency
+    images: [
+      {
+        uri: "https://images.pexels.com/photos/1000653/pexels-photo-1000653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
     ],
-    price: 22,
+    coordinates: [27.9322, 84.4216],
+    features: [
+      "Valley Views",
+      "Free Wi-Fi",
+      "Rooftop Terrace",
+      "Comfortable Rooms",
+    ],
   },
   {
     id: 7,
-    name: "Cultural Heritage Hostel",
-    image:
-      "https://cf.bstatic.com/xdata/images/city/600x600/977255.jpg?k=701d538f315c17d17ca4eb5ff1a7bd0f8ed9222acebdaa6a212b638d04bef1c1&o=",
-    features: [
-      "Cultural Workshops",
-      "Traditional Cuisine",
-      "Craft Market",
-      "Free Walking Tours",
+    name: "GANDAKI GUEST HOUSE",
+    location: "Pokhara, Kaski",
+    description:
+      "Located by Lake Phewa in Pokhara, Gandaki Guest House offers students a tranquil lakeside retreat. It features lake views, free Wi-Fi, and easy access to Pokhara's attractions.",
+    rent: 22000, // Monthly fee in Nepali currency
+    images: [
+      {
+        uri: "https://images.pexels.com/photos/46253/mt-fuji-sea-of-clouds-sunrise-46253.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/2478248/pexels-photo-2478248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
     ],
-    price: 27,
+    coordinates: [
+      28.2096,
+
+      83.9856,
+    ],
+    features: [
+      "Lake Views",
+      "Free Wi-Fi",
+      "Tranquil Atmosphere",
+      "Easy Access to Attractions",
+    ],
   },
   {
     id: 8,
-    name: "Mountain Explorer Hostel",
-    image:
-      "hhttps://cf.bstatic.com/xdata/images/hotel/square600/255854447.webp?k=f9c9d47f18b3156fdcc5596749d137f35e3cf4962a8d3d37d69be0066ec9bfc3&o=",
-    features: [
-      "Hiking Trails",
-      "Ski Equipment Rental",
-      "Sauna",
-      "Mountain Views",
+    name: "ANNAPURNA ABODE",
+    location: "Muktinath, Mustang",
+    description:
+      "Annapurna Abode offers students a serene stay in Muktinath with views of the majestic Annapurna range. It features comfortable accommodations, free Wi-Fi, and a peaceful environment.",
+    rent: 19000, // Monthly fee in Nepali currency
+    images: [
+      {
+        uri: "https://images.pexels.com/photos/1000653/pexels-photo-1000653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
     ],
-    price: 40,
+    coordinates: [28.8266, 83.7264],
+    features: ["Mountain Views", "Free Wi-Fi", "Comfortable Accommodations"],
   },
   {
     id: 9,
-    name: "Eco-Friendly Hostel",
-    image:
-      "https://cf.bstatic.com/xdata/images/hotel/square600/13125860.webp?k=35b70a7e8a17a71896996cd55d84f742cd15724c3aebaed0d9b5ba19c53c430b&o=",
-    features: [
-      "Solar Panels",
-      "Recycling Program",
-      "Organic Farm",
-      "Community Garden",
+    name: "GANESH GUEST HOUSE",
+    location: "Chame, Manang",
+    description:
+      "Surrounded by the scenic beauty of Manang, Ganesh Guest House offers students a peaceful stay with views of the Annapurna range. It features cozy rooms, free Wi-Fi, and a garden terrace.",
+    rent: 17000, // Monthly fee in Nepali currency
+    images: [
+      {
+        uri: "https://images.pexels.com/photos/5146925/pexels-photo-5146925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/7968277/pexels-photo-7968277.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/4907213/pexels-photo-4907213.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
     ],
-    price: 32,
+    coordinates: [28.5502, 84.1231],
+    features: ["Mountain Views", "Free Wi-Fi", "Garden Terrace", "Cozy Rooms"],
   },
   {
     id: 10,
-    name: "Adventure Basecamp Hostel",
-    image:
-      "https://cf.bstatic.com/xdata/images/hotel/square600/85257658.webp?k=e3f110e4ed0978310a028465a3bdd609149ecbded601555c881106255556b52e&o=",
-    features: [
-      "Adventure Tours",
-      "Climbing Wall",
-      "Outdoor Cinema",
-      "Campfire Nights",
+    name: "LANGTANG LODGE",
+    location: "Langtang, Rasuwa",
+    description:
+      "Located in the serene Langtang valley, Langtang Lodge offers students an escape into nature with stunning views of the Langtang Himalayas. It features comfortable accommodations, free Wi-Fi, and trekking opportunities.",
+    rent: 20000, // Monthly fee in Nepali currency
+    images: [
+      {
+        uri: "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/276505/pexels-photo-276505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
+      {
+        uri: "https://images.pexels.com/photos/276486/pexels-photo-276486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      },
     ],
-    price: 33,
+    coordinates: [28.3801, 85.4206],
+    features: [
+      "Mountain Views",
+      "Free Wi-Fi",
+      "Trekking Opportunities",
+      "Comfortable Accommodations",
+    ],
   },
 ];

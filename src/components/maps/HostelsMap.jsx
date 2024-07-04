@@ -1,13 +1,16 @@
+/* eslint-disable react/prop-types */
+
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 import "leaflet-routing-machine";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 
-import location from "../assets/icons/pin.png";
-import hostel from "../assets/icons/hostel.png";
+import location from "../../assets/icons/pin.png";
+import hostel from "../../assets/icons/hostel.png";
+import { useCoordinates } from "../../hooks/use-coordinates";
 
 let loveIcon = L.icon({
   iconUrl: location,
@@ -24,52 +27,20 @@ let hostelIcon = L.icon({
   iconSize: [55, 55],
 });
 
-const hostels = [
-  {
-    name: "Mohan Solutions",
-    coordinates: [27.7172, 85.324],
-  },
-  {
-    name: "Biraj Kalanki",
-    coordinates: [27.6931052, 85.28065390000006],
-  },
-  {
-    name: "Aayush Solutions",
-    coordinates: [27, 85],
-  },
-  {
-    name: "Raman Solutions",
-    coordinates: [27.4, 85.19],
-  },
-];
-
-// eslint-disable-next-line react/prop-types
-const Map = () => {
+const HostelsMap = ({ hostels, selectedHostel, setSelectedHostel }) => {
   const mapRef = useRef();
-  const [userLocation, setUserLocation] = useState(null);
-  const [selectedHostel, setSelectedHostel] = useState(null);
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setUserLocation([latitude, longitude]);
-        },
-        (error) => {
-          console.error("Error getting user location:", error);
-        }
-      );
-    } else {
-      console.error("Geolocation is not supported by this browser.");
-    }
-  }, []);
+  const routingControlRef = useRef(null);
+  const { coordinates } = useCoordinates();
 
   const showRouting = (map) => {
-    if (userLocation && selectedHostel) {
-      L.Routing.control({
+    if (routingControlRef.current) {
+      map.removeControl(routingControlRef.current);
+    }
+
+    if (coordinates && selectedHostel) {
+      routingControlRef.current = L.Routing.control({
         waypoints: [
-          L.latLng(userLocation[0], userLocation[1]),
+          L.latLng(coordinates[0], coordinates[1]),
           L.latLng(
             selectedHostel.coordinates[0],
             selectedHostel.coordinates[1]
@@ -91,10 +62,10 @@ const Map = () => {
   };
 
   return (
-    <div className="w-full h-full my-10 p-10">
+    <div className="w-full h-full z-10">
       <MapContainer
-        center={[27.7172, 85.324]}
-        zoom={12}
+        center={coordinates || [27.7172, 85.324]}
+        zoom={14}
         className="w-full h-96"
         ref={mapRef}
       >
@@ -103,8 +74,8 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">PPV</a> contributors'
         />
 
-        {userLocation && (
-          <Marker position={userLocation} icon={loveIcon}>
+        {coordinates && (
+          <Marker position={coordinates} icon={loveIcon}>
             <Popup>HERE</Popup>
           </Marker>
         )}
@@ -126,14 +97,8 @@ const Map = () => {
 
         <RenderRouting />
       </MapContainer>
-
-      {selectedHostel && (
-        <div className="p-10 bg-red-400">
-          <h2>Selected Hostel: {selectedHostel.name}</h2>
-        </div>
-      )}
     </div>
   );
 };
 
-export default Map;
+export default HostelsMap;
