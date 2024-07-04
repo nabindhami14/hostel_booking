@@ -4,7 +4,7 @@ import { persist } from "zustand/middleware";
 export const useCoordinates = create(
   persist(
     (set) => ({
-      coordinates: null,
+      coordinates: [27.7172, 85.324],
       setCoordinates: (coordinates) => set({ coordinates }),
       initializeCoordinates: () => {
         set((state) => {
