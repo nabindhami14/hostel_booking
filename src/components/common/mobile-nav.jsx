@@ -1,61 +1,78 @@
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import {
-  Home,
-  LogOut,
-  MenuIcon,
-  ShoppingBag,
-  ShoppingCart,
-} from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Home, LogOut, Menu, ShoppingBag, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function MobileNav() {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
-    <Menu>
-      <MenuButton>
-        <MenuIcon className="" />
-      </MenuButton>
+    <div className="relative inline-block text-left" ref={menuRef}>
+      <button onClick={toggleMenu}>
+        <Menu />
+      </button>
 
-      <MenuItems
-        transition
-        anchor="bottom end"
-        className="w-52 bg-neutral-600 origin-top-right rounded-md border border-white/5 bg-white/5 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
-      >
-        <MenuItem>
-          <Link
-            to={"/"}
-            className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10"
-          >
-            <Home className="size-4 fill-white/30" />
-            Home
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link
-            to="/hostels"
-            className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10"
-          >
-            <ShoppingBag className="size-4 fill-white/30" />
-            Hostels
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link
-            to="/bookings"
-            className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10"
-          >
-            <ShoppingCart className="size-4 fill-white/30" />
-            Bookings
-          </Link>
-        </MenuItem>
-
-        <div className="my-1 h-px bg-white/5" />
-        <MenuItem>
-          <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-            <LogOut className="size-4 fill-white/30" />
-            Logout
-          </button>
-        </MenuItem>
-      </MenuItems>
-    </Menu>
+      {isOpen && (
+        <div className="z-10 origin-top-right absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-gray-100">
+          <div className="py-1">
+            <Link
+              to={"/"}
+              onClick={closeMenu}
+              className="group flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >
+              <Home className="w-5 h-5 mr-2" />
+              Home
+            </Link>
+            <Link
+              to="/hostels"
+              onClick={closeMenu}
+              className="group flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >
+              <ShoppingBag className="w-5 h-5 mr-2" />
+              Hostels
+            </Link>
+            <Link
+              to="/bookings"
+              onClick={closeMenu}
+              className="group flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >
+              <ShoppingCart className="w-5 h-5 mr-2" />
+              Bookings
+            </Link>
+            <div className="h-px my-1 bg-gray-200"></div>
+            <button className="group flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              <LogOut className="w-5 h-5 mr-2" />
+              Logout
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

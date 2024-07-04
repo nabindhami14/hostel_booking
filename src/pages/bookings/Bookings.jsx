@@ -2,7 +2,7 @@ import BookingsTable from "../../components/table/bookings-table";
 
 const Bookings = () => {
   return (
-    <div>
+    <div className="w-full overflow-scroll">
       <BookingsTable />
     </div>
   );

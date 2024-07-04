@@ -62,11 +62,11 @@ const HostelsMap = ({ hostels, selectedHostel, setSelectedHostel }) => {
   };
 
   return (
-    <div className="w-full h-full z-10">
+    <div className="w-full">
       <MapContainer
         center={coordinates || [27.7172, 85.324]}
         zoom={14}
-        className="w-full h-96"
+        className="w-full h-96 z-0"
         ref={mapRef}
       >
         <TileLayer
