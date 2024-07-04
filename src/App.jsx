@@ -18,9 +18,9 @@ function App() {
   const [isInitialized, setIsInitialized] = useState(false);
 
   const initializeCoordinates = useCoordinates(
-    (state) => state.initializeCoordinates
+    (state) => state?.initializeCoordinates
   );
-  const coordinates = useCoordinates((state) => state.coordinates);
+  const coordinates = useCoordinates((state) => state?.coordinates);
 
   useEffect(() => {
     if (!isInitialized && coordinates === null) {

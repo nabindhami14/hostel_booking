@@ -8,7 +8,7 @@ export const useCoordinates = create(
       setCoordinates: (coordinates) => set({ coordinates }),
       initializeCoordinates: () => {
         set((state) => {
-          if (state.coordinates === null) {
+          if (state?.coordinates === null) {
             navigator.geolocation.getCurrentPosition(
               (position) => {
                 const { latitude, longitude } = position.coords;
